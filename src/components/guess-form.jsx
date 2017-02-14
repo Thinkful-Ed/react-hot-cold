@@ -1,26 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {makeGuess, saveFewestGuesses, fetchFewestGuesses} from '../actions';
+import {makeGuess} from '../actions';
 
 export class GuessForm extends React.Component {
     submitGuess(event) {
         event.preventDefault();
         const value = this.input.value;
         this.props.dispatch(makeGuess(value));
-
-        if (parseInt(value, 10) === this.props.correctAnswer &&
-            (!this.props.fewestGuesses ||
-             this.props.guessCount < this.props.fewestGuesses)) {
-            const guesses = this.props.guessCount + 1;
-            this.props.dispatch(
-                saveFewestGuesses(guesses)
-            ).then(() => {
-                return this.props.dispatch(
-                    fetchFewestGuesses()
-                );
-            });
-        }
     }
 
     render() {

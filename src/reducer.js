@@ -1,17 +1,14 @@
 import {
     NEW_GAME,
     MAKE_GUESS,
-    TOGGLE_INFO_MODAL,
-    FETCH_FEWEST_GUESSES_SUCCESS,
-    FETCH_FEWEST_GUESSES_ERROR
+    TOGGLE_INFO_MODAL
 } from './actions';
 
 const initialState = {
     guesses: [],
     feedback: 'Make your guess!',
     correctAnswer: Math.round(Math.random() * 100),
-    showInfoModal: false,
-    fewestGuesses: null
+    showInfoModal: false
 };
 
 export default (state, action) => {
@@ -66,18 +63,6 @@ export default (state, action) => {
         });
         return state;
     }
-    else if (action.type === FETCH_FEWEST_GUESSES_SUCCESS) {
-         state = Object.assign({}, state, {
-             fewestGuesses: action.guesses
-        });
-        return state;
-    }
-    else if (action.type === FETCH_FEWEST_GUESSES_ERROR) {
-        // TODO: Handle properly
-        console.error(action.error);
-        return state;
-    }
-
     return state;
 };
 
