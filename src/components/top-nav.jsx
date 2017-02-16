@@ -1,17 +1,18 @@
 import React from 'react';
-import {connect} from 'react-redux';
 
-import {newGame, toggleInfoModal} from '../actions';
-
-export class TopNav extends React.Component {
-    newGame(event) {
+export default class TopNav extends React.Component {
+    onNewGame(event) {
         event.preventDefault();
-        this.props.dispatch(newGame());
+        if (this.props.onNewGame) {
+            this.props.onNewGame();
+        }
     }
 
-    toggleInfoModal(event) {
+    onInfo(event) {
         event.preventDefault();
-        this.props.dispatch(toggleInfoModal());
+        if (this.props.onInfo) {
+            this.props.onInfo();
+        }
     }
 
     render() {
@@ -19,12 +20,12 @@ export class TopNav extends React.Component {
             <nav>
                 <ul className="clearfix">
                     <li>
-                        <a className="what" href="#" onClick={e => this.toggleInfoModal(e)}>
+                        <a className="what" href="#" onClick={e => this.onInfo(e)}>
                             What?
                         </a>
                     </li>
                     <li>
-                        <a className="new" href="#" onClick={e => this.newGame(e)}>
+                        <a className="new" href="#" onClick={e => this.onNewGame(e)}>
                             + New Game
                         </a>
                     </li>
@@ -34,4 +35,3 @@ export class TopNav extends React.Component {
     }
 };
 
-export default connect()(TopNav);
