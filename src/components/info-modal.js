@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class InfoModal extends React.Component {
+export default class InfoModal extends React.Component {
     onClose(event) {
         event.preventDefault();
         if (this.props.onClose) {
