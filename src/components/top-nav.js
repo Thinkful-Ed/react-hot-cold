@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './top-nav.css';
+
 export default class TopNav extends React.Component {
     onNewGame(event) {
         event.preventDefault();

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './info-modal.css';
+
 export default class InfoModal extends React.Component {
     onClose(event) {
         event.preventDefault();
