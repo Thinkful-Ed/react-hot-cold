@@ -3,7 +3,7 @@ input {
 	height: 50px;
 	display: block;
 	padding: 0.8em 0;
-	margin: 0.8em auto 0;
+	margin: 0.8rem auto 0;
 	background: #50597b;
 	color: #fff;
 	border: solid 1px #1f253d;
@@ -24,7 +24,7 @@ input.button {
 	transition: background 1s ease-in-out;
 }
 
-input.button:hover {
+input.button:hover, input.button:focus {
 	background: #e64c65;
 	color: #fff;
 	-webkit-transition: background 1s ease-in-out;
@@ -41,8 +41,8 @@ input.text {
 	font-size: 2em;
 }
 
-input:focus {
-	outline: none !important;
+p {
+  color: white;
 }
 
 ::-webkit-input-placeholder {
@@ -54,9 +54,9 @@ input:focus {
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #95a5a6; 
+   color: #95a5a6;
 }
 
-:-ms-input-placeholder {  
-   color: #95a5a6; 
+:-ms-input-placeholder {
+   color: #95a5a6;
 }

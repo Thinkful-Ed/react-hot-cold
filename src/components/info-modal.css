@@ -47,28 +47,40 @@
 	text-align: justify;
 }
 
-.content > div ul {
+.content > div ol {
 	margin-bottom: -30px;
 	padding: 0 0 30px 20px;
 	text-align: left;
 }
 
-.content > div ul li {
+.content > div ol li {
 	padding: 5px 0;
-	display: block;	
-	list-style-type: disc;
 	line-height: 1.5em;
 }
 
-.content > div ul li strong{
-	text-decoration: underline;
+.content > div ol li strong {
+	font-weight: bold;
+  color: #e74c3c;
+  background: white;
+  padding-left: .25em;
+  padding-right: .25em;
 }
 
-.content > div a {
+.content > div button {
 	font-size: 0.8em;
 	background: #1F253D;
-	color: #95a5a6;
+	color: white;
 	padding: 0.5em 2em;
 	margin-bottom: 50px;
 	border-radius: 3px;
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  border: 2px solid #1F253D;
+}
+
+.content > div button:hover, .content > div button:focus {
+  background: white;
+  color: #1F253D;
 }

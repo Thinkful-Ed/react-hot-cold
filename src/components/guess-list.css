@@ -21,3 +21,9 @@ ul.guessBox li {
 	margin: 0.2em;
 	color: #fff;
 }
+
+label {
+  color: white;
+  margin-top: 1em;
+  display: block;
+}
