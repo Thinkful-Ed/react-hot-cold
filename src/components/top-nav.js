@@ -4,7 +4,6 @@ import './top-nav.css';
 
 export default class TopNav extends React.Component {
     onNewGame(event) {
-        event.preventDefault();
         if (this.props.onNewGame) {
             this.props.onNewGame();
         }
@@ -22,12 +21,12 @@ export default class TopNav extends React.Component {
             <nav>
                 <ul className="clearfix">
                     <li>
-                        <a className="what" href="#" onClick={e => this.onInfo(e)}>
+                        <a className="what" aria-label="How to play" href="#modal" onClick={e => this.onInfo(e)}>
                             What?
                         </a>
                     </li>
                     <li>
-                        <a className="new" href="#" onClick={e => this.onNewGame(e)}>
+                        <a className="new" aria-live="Start a new game" href="#feedback" onClick={e => this.onNewGame(e)}>
                             + New Game
                         </a>
                     </li>
@@ -36,4 +35,3 @@ export default class TopNav extends React.Component {
         );
     }
 };
-
