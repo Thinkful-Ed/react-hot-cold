@@ -11,7 +11,7 @@ export default class Game extends React.Component {
         this.state = {
             guesses: [],
             feedback: 'Make your guess!',
-            correctAnswer: Math.round(Math.random() * 100)
+            correctAnswer: Math.floor(Math.random() * 100) + 1,
         };
     }
 
@@ -19,7 +19,7 @@ export default class Game extends React.Component {
         this.setState({
             guesses: [],
             feedback: 'Make your guess!',
-            correctAnswer: Math.round(Math.random() * 100)
+            correctAnswer: Math.floor(Math.random() * 100) + 1,
         });
     }
 
