@@ -4,6 +4,7 @@ import Header from './header';
 import GuessSection from './guess-section';
 import GuessCount  from './guess-count';
 import GuessList from './guess-list';
+import InfoModal from './info-modal';
 
 export default class Game extends React.Component {
     constructor(props) {
@@ -11,7 +12,8 @@ export default class Game extends React.Component {
         this.state = {
             guesses: [],
             feedback: 'Make your guess!',
-            correctAnswer: Math.floor(Math.random() * 100) + 1,
+            correctAnswer: Math.round(Math.random() * 100),
+            showInfoModal: false
         };
     }
 
@@ -55,16 +57,28 @@ export default class Game extends React.Component {
             feedback,
             guesses: [...this.state.guesses, guess]
         });
+
+        document.title = (feedback) ? `${feedback} | Hot or Cold` : 'Hot or Cold';
+    }
+
+    onToggleInfoModal = () => {
+      this.setState({
+          showInfoModal: !this.state.showInfoModal
+      });
     }
 
     render() {
         return (
             <div>
-                <Header onNewGame={() => this.newGame()}/>
-                <GuessSection feedback={this.state.feedback}
-                    onGuess={(guess) => this.guess(guess)} />
-                <GuessCount count={this.state.guesses.length} />
-                <GuessList guesses={this.state.guesses} />
+                <InfoModal hidden={!this.state.showInfoModal} aria-hidden={!this.state.showInfoModal} onClose={() => this.onToggleInfoModal()} />
+                <div aria-hidden={this.state.showInfoModal}>
+                  <Header onNewGame={() => this.newGame()} toggleInfoModal={this.onToggleInfoModal} />
+                  <GuessSection feedback={this.state.feedback}
+                      onGuess={(guess) => this.guess(guess)} />
+                  <GuessCount count={this.state.guesses.length} />
+                  <GuessList guesses={this.state.guesses} />
+                </div>
+
             </div>
         );
     }
