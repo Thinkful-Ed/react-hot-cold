@@ -10,14 +10,15 @@ export default function guessSection(props) {
         </li>
     ));
     return (
-        <div>
-            <p>
-                Guess #<span id="count">{props.count}</span>!
+        <section role="region"
+        aria-label="Game status" aria-describedby="guessCount">
+            <p id="guessCount">
+                You've made <span id="count">{props.count}</span> guesses!
             </p>
             <ul  id="guessList" className="guessBox clearfix">
                 {guesses}
             </ul>
-        </div>
+        </section>
     )
 }
 
