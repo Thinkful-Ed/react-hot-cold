@@ -7,8 +7,6 @@ export default class GuessSection extends React.Component {
   onGuess(event) {
     event.preventDefault();
 
-    console.log(this.props);
-
     if (this.props.onGuess) {
       const value = this.input.value;
       this.props.onGuess(value);
