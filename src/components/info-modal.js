@@ -3,9 +3,10 @@ import Modal from 'react-modal';
 
 import './info-modal.css';
 
+Modal.setAppElement('#root');
+
 export default class InfoModal extends React.Component {
     onClose(event) {
-
         if (this.props.onRequestClose) {
             this.props.onRequestClose();
         }
