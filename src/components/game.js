@@ -2,8 +2,7 @@ import React from 'react';
 
 import Header from './header';
 import GuessSection from './guess-section';
-import GuessCount  from './guess-count';
-import GuessList from './guess-list';
+import StatusSection from './status-section';
 import InfoModal from './info-modal';
 
 export default class Game extends React.Component {
@@ -78,8 +77,8 @@ export default class Game extends React.Component {
                   <Header onNewGame={() => this.newGame()} toggleInfoModal={this.toggleInfoModal} />
                   <GuessSection feedback={this.state.feedback}
                       onGuess={(guess) => this.guess(guess)} />
-                  <GuessCount count={this.state.guesses.length} />
-                  <GuessList guesses={this.state.guesses} />
+                  <StatusSection count={this.state.guesses.length} 
+                      guesses={this.state.guesses} />
 
             </div>
         );
