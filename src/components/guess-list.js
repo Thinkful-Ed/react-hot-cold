@@ -10,7 +10,7 @@ export default function GuessList(props) {
     ));
 
     return (
-        <ul role="status" aria-live="polite" aria-atomic="true" id="guessList" className="guessBox clearfix">
+        <ul  id="guessList" className="guessBox clearfix">
             {guesses}
         </ul>
     );
