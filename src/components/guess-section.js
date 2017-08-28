@@ -20,15 +20,18 @@ export default class GuessSection extends React.Component {
 
     render() {
         return (
+                <section role="region" aria-label="Guess section" aria-describedby="feedback">
+                    <h2 id="feedback" 
+            ref={feedback => this.feedback = feedback}>{this.props.feedback}</h2>
             <form onSubmit={e => this.onGuess(e)}>
-                <h2 id="feedback" 
-                ref={feedback => this.feedback = feedback}>{this.props.feedback}</h2>
+                
                 <input type="number" name="userGuess" id="userGuess"
                     className="text" min="1" max="100" maxLength="3" autoComplete="off" aria-label="Enter a number"
                     aria-describedby="feedback" 
                     ref={input => this.input = input} required />
                 <input type="submit" id="guessButton" className="button" name="submit" value="Guess"/>
             </form>
+                </section>
         );
     }
 };
