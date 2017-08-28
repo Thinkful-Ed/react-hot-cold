@@ -73,15 +73,13 @@ export default class Game extends React.Component {
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.afterOpenModal}
                     onRequestClose={this.toggleInfoModal}
-                    contentLabel="Example Modal"
+                    contentLabel="What do I do?"
               />
-                <div aria-hidden={this.state.modalIsOpen}>
                   <Header onNewGame={() => this.newGame()} toggleInfoModal={this.toggleInfoModal} />
                   <GuessSection feedback={this.state.feedback}
                       onGuess={(guess) => this.guess(guess)} />
                   <GuessCount count={this.state.guesses.length} />
                   <GuessList guesses={this.state.guesses} />
-                </div>
 
             </div>
         );
