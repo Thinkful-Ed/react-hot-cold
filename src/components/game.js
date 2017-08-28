@@ -60,18 +60,23 @@ export default class Game extends React.Component {
         document.title = (feedback) ? `${feedback} | Hot or Cold` : 'Hot or Cold';
     }
 
-    onToggleInfoModal = () => {
+    toggleInfoModal = () => {
       this.setState({
-          showInfoModal: !this.state.showInfoModal
+          modalIsOpen: !this.state.modalIsOpen
       });
     }
 
     render() {
         return (
             <div>
-                <InfoModal hidden={!this.state.showInfoModal} aria-hidden={!this.state.showInfoModal} onClose={() => this.onToggleInfoModal()} />
-                <div aria-hidden={this.state.showInfoModal}>
-                  <Header onNewGame={() => this.newGame()} toggleInfoModal={this.onToggleInfoModal} />
+                <InfoModal
+                    isOpen={this.state.modalIsOpen}
+                    onAfterOpen={this.afterOpenModal}
+                    onRequestClose={this.toggleInfoModal}
+                    contentLabel="Example Modal"
+              />
+                <div aria-hidden={this.state.modalIsOpen}>
+                  <Header onNewGame={() => this.newGame()} toggleInfoModal={this.toggleInfoModal} />
                   <GuessSection feedback={this.state.feedback}
                       onGuess={(guess) => this.guess(guess)} />
                   <GuessCount count={this.state.guesses.length} />
