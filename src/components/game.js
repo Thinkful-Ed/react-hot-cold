@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from './header';
-import GuessForm from './guess-form';
+import GuessSection from './guess-section';
 import GuessCount  from './guess-count';
 import GuessList from './guess-list';
 import InfoModal from './info-modal';
@@ -76,7 +76,7 @@ export default class Game extends React.Component {
                     contentLabel="What do I do?"
               />
                   <Header onNewGame={() => this.newGame()} toggleInfoModal={this.toggleInfoModal} />
-                  <GuessForm feedback={this.state.feedback}
+                  <GuessSection feedback={this.state.feedback}
                       onGuess={(guess) => this.guess(guess)} />
                   <GuessCount count={this.state.guesses.length} />
                   <GuessList guesses={this.state.guesses} />
