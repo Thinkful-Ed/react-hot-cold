@@ -1,9 +1,9 @@
 import React from "react";
 
+import InfoModal from "./info-modal";
 import Header from "./header";
 import GuessSection from "./guess-section";
 import StatusSection from "./status-section";
-import InfoModal from "./info-modal";
 
 export default class Game extends React.Component {
     constructor(props) {
