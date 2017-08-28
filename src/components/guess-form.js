@@ -15,16 +15,14 @@ export default class GuessForm extends React.Component {
             this.props.onGuess(value);
         }
         this.input.value = '';
-        this.feedbackLink.focus();
+        this.feedback.focus();
     }
 
     render() {
         return (
             <form onSubmit={e => this.onGuess(e)}>
-                <a href="#userGuess" 
-                ref={feedbackLink => this.feedbackLink = feedbackLink}>
-                    <h2 id="feedback" >{this.props.feedback}</h2>
-                </a>
+                <h2 id="feedback" 
+                ref={feedback => this.feedback = feedback}>{this.props.feedback}</h2>
                 <input type="number" name="userGuess" id="userGuess"
                     className="text" min="1" max="100" maxLength="3" autoComplete="off" aria-label="Enter a number"
                     aria-describedby="feedback" 
