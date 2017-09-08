@@ -1,24 +1,23 @@
 nav {
-	position: relative;
-	height: 10%;
-	padding: 1em;
+  position: relative;
+  height: 10%;
+  padding: 1em;
 }
 
 nav ul li {
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.2em;
 }
 
 nav ul li:first-child {
-	float: left;
+  float: left;
 }
 
 nav ul li:last-child {
-	float: right;
+  float: right;
 }
 
 nav a {
-
-	color: #fff;
+  color: #fff;
 }

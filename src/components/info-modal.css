@@ -1,86 +1,87 @@
 .overlay {
-	width: 100%;
-	height: 100%;
-	color: #fff;
-	background: #e74c3c;
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin: 0;
-	z-index: 1000;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: #e74c3c;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: 1000;
 }
 
 .content {
-	color: #fff;
-	background: #e74c3c;
-	position: relative;
-	height: auto;
-	width: 600px;
-	border-radius: 3px;
-	top: 15%;
-	margin: auto auto;
-	border: 1px solid rgba(0,0,0,0.1);
+  color: #fff;
+  background: #e74c3c;
+  position: relative;
+  height: auto;
+  width: 600px;
+  border-radius: 3px;
+  top: 15%;
+  margin: auto auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .content h3 {
-	margin: 0;
-	padding: 0.4em;
-	text-align: center;
-	font-size: 2.4em;
-	font-weight: 300;
-	opacity: 0.8;
-	background: rgba(0,0,0,0.1);
-	border-radius: 3px 3px 0 0;
+  margin: 0;
+  padding: 0.4em;
+  text-align: center;
+  font-size: 2.4em;
+  font-weight: 300;
+  opacity: 0.8;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px 3px 0 0;
 }
 
 .content > div {
-	padding: 15px 40px 30px;
-	margin: 0;
-	font-weight: 300;
-	font-size: 1.15em;
+  padding: 15px 40px 30px;
+  margin: 0;
+  font-weight: 300;
+  font-size: 1.15em;
 }
 
 .content > div p {
-	margin: 0;
-	padding: 10px 0;
-	line-height: 2em;
-	text-align: justify;
+  margin: 0;
+  padding: 10px 0;
+  line-height: 2em;
+  text-align: justify;
 }
 
 .content > div ol {
-	margin-bottom: -30px;
-	padding: 0 0 30px 20px;
-	text-align: left;
+  margin-bottom: -30px;
+  padding: 0 0 30px 20px;
+  text-align: left;
 }
 
 .content > div ol li {
-	padding: 5px 0;
-	line-height: 1.5em;
+  padding: 5px 0;
+  line-height: 1.5em;
 }
 
 .content > div ol li strong {
-	font-weight: bold;
+  font-weight: bold;
   color: #e74c3c;
   background: white;
-  padding-left: .25em;
-  padding-right: .25em;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
 }
 
 .content > div button {
-	font-size: 0.8em;
-	background: #1F253D;
-	color: white;
-	padding: 0.5em 2em;
-	margin-bottom: 50px;
-	border-radius: 3px;
+  font-size: 0.8em;
+  background: #1f253d;
+  color: white;
+  padding: 0.5em 2em;
+  margin-bottom: 50px;
+  border-radius: 3px;
   border: none;
   appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
-  border: 2px solid #1F253D;
+  border: 2px solid #1f253d;
 }
 
-.content > div button:hover, .content > div button:focus {
+.content > div button:hover,
+.content > div button:focus {
   background: white;
-  color: #1F253D;
+  color: #1f253d;
 }
