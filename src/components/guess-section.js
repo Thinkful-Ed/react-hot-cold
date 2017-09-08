@@ -1,19 +1,9 @@
 import React from "react";
+import GuessForm from "./guess-form";
 
 import "./guess-section.css";
-import "./guess-form.css";
 
 export default class GuessSection extends React.Component {
-  onGuess(event) {
-    event.preventDefault();
-
-    if (this.props.onGuess) {
-      const value = this.input.value;
-      this.props.onGuess(value);
-    }
-    this.input.value = "";
-    this.feedback.focus();
-  }
 
   render() {
     return (
@@ -25,21 +15,7 @@ export default class GuessSection extends React.Component {
         ref={feedback => (this.feedback = feedback)}>
           {this.props.feedback}
         </h2>
-        <form onSubmit={e => this.onGuess(e)}>
-          <input type="number" name="userGuess"
-            id="userGuess" className="text"
-            min="1" max="100" maxLength="3"
-            autoComplete="off"
-            aria-label="Enter a number"
-            aria-describedby="feedback"
-            ref={input => (this.input = input)}
-            required
-          />
-          <input type="submit" name="submit" 
-            id="guessButton" className="button"
-            value="Guess"
-          />
-        </form>
+        <GuessForm makeGuess={guess => this.props.makeGuess(guess)}/>
       </section>
     );
   }

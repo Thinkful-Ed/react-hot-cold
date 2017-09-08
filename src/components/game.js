@@ -40,7 +40,7 @@ export default class Game extends React.Component {
     });
   }
 
-  guess(guess) {
+  makeGuess(guess) {
     guess = parseInt(guess, 10);
     if (isNaN(guess)) {
       this.setState({
@@ -93,7 +93,7 @@ export default class Game extends React.Component {
         />
         <GuessSection
           feedback={this.state.feedback}
-          onGuess={guess => this.guess(guess)}
+          makeGuess={guess => this.makeGuess(guess)}
         />
         <StatusSection
           count={this.state.guesses.length}
