@@ -42,6 +42,7 @@ body {
 	height: 96%;
 	margin: 0.8em auto;
 	font-family: 'Lato', Calibri, Arial, sans-serif;
+	color: white;
 	background-color: #1F253D;
 	text-align: center;
 	-webkit-border-radius: 4px;
@@ -52,11 +53,15 @@ body {
 	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
 }
 
-a {
-	text-decoration: none;
-	color: black;
+ul, ol {
+	list-style-type: none;
+	padding-left: 0;
 }
 
 ul li {
 	display: inline;
+}
+
+a {
+	text-decoration: none;
 }
