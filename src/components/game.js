@@ -1,9 +1,9 @@
 import React from "react";
 
-import InfoModal from "./info-modal";
 import Header from "./header";
 import GuessSection from "./guess-section";
 import StatusSection from "./status-section";
+import InfoSection from "./info-section"
 
 export default class Game extends React.Component {
     constructor(props) {
@@ -81,12 +81,6 @@ export default class Game extends React.Component {
   render() {
     return (
       <div>
-        <InfoModal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.toggleInfoModal}
-          contentLabel="What do I do?"
-        />
         <Header
           onNewGame={() => this.newGame()}
           toggleInfoModal={this.toggleInfoModal}
@@ -99,6 +93,7 @@ export default class Game extends React.Component {
           count={this.state.guesses.length}
           guesses={this.state.guesses}
         />
+        <InfoSection />
       </div>
     );
   }
