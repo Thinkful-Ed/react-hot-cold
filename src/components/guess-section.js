@@ -13,7 +13,7 @@ export default class GuessSection extends React.Component {
       >
         <h2 id="feedback" 
         ref={feedback => (this.feedback = feedback)}>
-          {this.props.feedback}
+          {this.props.feedback} {!this.props.gameWon ? <span className="visually-hidden">Guess again!</span>: ''}
         </h2>
         <GuessForm makeGuess={guess => this.props.makeGuess(guess)}/>
       </section>
