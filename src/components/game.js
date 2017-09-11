@@ -62,9 +62,15 @@ export default class Game extends React.Component {
   }
 
   readStatus() {
-    this.setState({
-      readStatus: true
-    })
+    this.setState((prevState, props) => {
+      return {
+        readStatus: true
+      }
+    }), this.setState((prevState, props) => {
+      return {
+        readStatus: false
+      }
+    }) 
   }
 
   render() {
@@ -82,6 +88,7 @@ export default class Game extends React.Component {
 
           />
           <StatusSection
+            feedback={this.state.feedback}
             guesses={this.state.guesses}
             readStatus={this.state.readStatus}
           />

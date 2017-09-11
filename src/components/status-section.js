@@ -13,6 +13,7 @@ export default function guessSection(props) {
   );
   const guessCount = props.guesses.length;
  
+  console.log(props.guesses.join(', '))
   return (
     <section role="region"
       aria-labelledby="guessCount"
@@ -27,8 +28,11 @@ export default function guessSection(props) {
       <div 
       id="status-readout"
       className=""
+      aria-live="assertive"
+      aria-atomic="true"
       hidden={!props.readStatus}>
-        Test
+        <p>Here's the status of the game right now: {props.feedback} You've made {guessCount} guesses. In order of most- to least-recent, they are: {props.guesses.join(', ')}
+        </p>
       </div>
     </section>
   );
