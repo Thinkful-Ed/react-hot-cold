@@ -7,14 +7,15 @@ import AuralStatus from "./aural-status";
 import "./status-section.css";
 
 export default function guessSection(props) {
-  const guessCount = props.guesses.length;
+  const { guesses, statusText } = props;
+  const guessCount = guesses.length;
   return (
     <section aria-labelledby="guessCount"
       aria-describedby="guessList"
     >
-    <GuessCount guessCount={props.guesses.length}/>
-    <GuessList guesses={props.guesses}/>
-    <AuralStatus statusText={props.statusText}/>
+    <GuessCount guessCount={guessCount}/>
+    <GuessList guesses={guesses}/>
+    <AuralStatus statusText={statusText}/>
     </section>
   );
 }
