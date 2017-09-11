@@ -62,7 +62,6 @@ export default class Game extends React.Component {
   }
 
   readStatus() {
-    alert('aaa')
     this.setState({
       readStatus: true
     })
@@ -75,18 +74,20 @@ export default class Game extends React.Component {
           onNewGame={() => this.newGame()}
           onReadStatus={()=> this.readStatus()}
         />
-        <GuessSection
-          feedback={this.state.feedback}
-          gameWon={this.state.gameWon}
-          makeGuess={guess => this.makeGuess(guess)}
+        <main role="main">
+          <GuessSection
+            feedback={this.state.feedback}
+            gameWon={this.state.gameWon}
+            makeGuess={guess => this.makeGuess(guess)}
 
-        />
-        <StatusSection
-          count={this.state.guesses.length}
-          guesses={this.state.guesses}
-          readStatus={this.state.readStatus}
-        />
-        <InfoSection />
+          />
+          <StatusSection
+            count={this.state.guesses.length}
+            guesses={this.state.guesses}
+            readStatus={this.state.readStatus}
+          />
+          <InfoSection />
+        </main>
       </div>
     );
   }
