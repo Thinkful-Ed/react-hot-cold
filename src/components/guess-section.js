@@ -11,7 +11,10 @@ export default class GuessSection extends React.Component {
         aria-label="Guess section"
         aria-describedby="feedback"
       >
-        <h2 id="feedback" 
+        <h2 id="feedback"
+        role="status"
+        aria-live="assertive"
+        aria-atomic="true"
         ref={feedback => (this.feedback = feedback)}>
           {this.props.feedback} {!this.props.gameWon ? <span className="visually-hidden">Guess again!</span>: ''}
         </h2>
