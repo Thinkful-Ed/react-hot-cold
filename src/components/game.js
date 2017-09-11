@@ -11,8 +11,7 @@ export default class Game extends React.Component {
     this.state = {
       guesses: [],
       feedback: "Make your guess!",
-      correctAnswer: Math.round(Math.random() * 100),
-      modalIsOpen: false
+      correctAnswer: Math.round(Math.random() * 100)
     };
   }
 
@@ -56,18 +55,11 @@ export default class Game extends React.Component {
     document.title = feedback ? `${feedback} | Hot or Cold` : "Hot or Cold";
   }
 
-  toggleInfoModal = () => {
-    this.setState({
-      modalIsOpen: !this.state.modalIsOpen
-    });
-  };
-
   render() {
     return (
       <div>
         <Header
           onNewGame={() => this.newGame()}
-          toggleInfoModal={this.toggleInfoModal}
         />
         <GuessSection
           feedback={this.state.feedback}
