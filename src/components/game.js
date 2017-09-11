@@ -12,7 +12,7 @@ export default class Game extends React.Component {
       guesses: [],
       feedback: "Make your guess!",
       correctAnswer: Math.round(Math.random() * 100),
-      gameWon: true
+      gameWon: false
     };
   }
 
