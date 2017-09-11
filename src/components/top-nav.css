@@ -14,7 +14,7 @@ nav ul li:first-child {
   float: left;
 }
 
-nav ul li:last-child {
+nav ul li {
   float: right;
 }
 
