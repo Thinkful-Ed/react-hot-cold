@@ -2,20 +2,7 @@ import React from "react";
 
 import "./top-nav.css";
 
-export default class TopNav extends React.Component {
-  onNewGame(event) {
-    if (this.props.onNewGame) {
-      this.props.onNewGame();
-    }
-  }
-  onReadStatus() {
-    alert('bnbb')
-    if (this.props.onReadStatus) {
-      this.props.onReadStatus();
-    }
-  }
-
-  render() {
+export default function TopNav(props) {
     return (
       <nav>
         <ul className="clearfix">
@@ -33,7 +20,7 @@ export default class TopNav extends React.Component {
               className="new"
               aria-label="Start a new game"
               href="#feedback"
-              onClick={e => this.onNewGame(e)}
+              onClick={props.onNewGame}
             >
               + New Game
             </a>
@@ -41,7 +28,7 @@ export default class TopNav extends React.Component {
           <li>
             <a
             href="#get-status"
-            onClick={() => this.onReadStatus()}
+            onClick={props.onReadStatus}
             >
               Hear state of game
             </a>
@@ -50,4 +37,3 @@ export default class TopNav extends React.Component {
       </nav>
     );
   }
-}
