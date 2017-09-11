@@ -25,7 +25,7 @@ export default class TopNav extends React.Component {
           <li>
             <a
               className="new"
-              aria-live="Start a new game"
+              aria-label="Start a new game"
               href="#feedback"
               onClick={e => this.onNewGame(e)}
             >
