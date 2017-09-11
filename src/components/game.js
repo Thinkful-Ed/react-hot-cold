@@ -85,7 +85,6 @@ export default class Game extends React.Component {
 
           />
           <StatusSection
-            feedback={this.state.feedback}
             guesses={this.state.guesses}
             statusText={this.state.auralStatus}
           />
