@@ -1,3 +1,9 @@
+#count {
+  color: #f39c12;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
 ul.guessBox {
   height: 80px;
   margin: 10px auto 0;
