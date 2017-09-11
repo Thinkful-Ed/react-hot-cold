@@ -28,11 +28,6 @@ input.button:hover,
 input.button:focus {
   background: #e64c65;
   color: #fff;
-  -webkit-transition: background 1s ease-in-out;
-  -moz-transition: background 1s ease-in-out;
-  -ms-transition: background 1s ease-in-out;
-  -o-transition: background 1s ease-in-out;
-  transition: background 1s ease-in-out;
   cursor: pointer;
 }
 
