@@ -12,7 +12,7 @@ export default function GuessSection(props){
       aria-describedby="feedback"
     >
       <Feedback feedback={props.feedback}/>
-      <GuessForm makeGuess={guess => props.makeGuess(guess)}/>
+      <GuessForm onMakeGuess={guess => props.onMakeGuess(guess)}/>
     </section>
   );
 }
