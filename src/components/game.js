@@ -12,9 +12,12 @@ export default class Game extends React.Component {
       guesses: [],
       feedback: "Make your guess!",
       correctAnswer: Math.round(Math.random() * 100),
+      readStatus: false,
       gameWon: false
     };
   }
+
+
 
   newGame() {
     this.setState({
@@ -58,11 +61,19 @@ export default class Game extends React.Component {
     document.title = feedback ? `${feedback} | Hot or Cold` : "Hot or Cold";
   }
 
+  readStatus() {
+    alert('aaa')
+    this.setState({
+      readStatus: true
+    })
+  }
+
   render() {
     return (
       <div>
         <Header
           onNewGame={() => this.newGame()}
+          onReadStatus={()=> this.readStatus()}
         />
         <GuessSection
           feedback={this.state.feedback}
@@ -73,6 +84,7 @@ export default class Game extends React.Component {
         <StatusSection
           count={this.state.guesses.length}
           guesses={this.state.guesses}
+          readStatus={this.state.readStatus}
         />
         <InfoSection />
       </div>
