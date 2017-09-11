@@ -8,6 +8,12 @@ export default class TopNav extends React.Component {
       this.props.onNewGame();
     }
   }
+  onReadStatus() {
+    alert('bnbb')
+    if (this.props.onReadStatus) {
+      this.props.onReadStatus();
+    }
+  }
 
   render() {
     return (
@@ -35,7 +41,7 @@ export default class TopNav extends React.Component {
           <li>
             <a
             href="#get-status"
-            onClick={this.onReadStatus}
+            onClick={() => this.onReadStatus()}
             >
               Hear state of game
             </a>

@@ -9,7 +9,7 @@ export default class Header extends React.Component {
     return (
       <header>
         <TopNav
-
+          onReadStatus={this.props.onReadStatus}
           onNewGame={this.props.onNewGame}
         />
         <h1>HOT or COLD</h1>
