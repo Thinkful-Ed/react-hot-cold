@@ -9,7 +9,7 @@ export default class Header extends React.Component {
     return (
       <header>
         <TopNav
-          onInfo={() => this.props.toggleInfoModal()}
+
           onNewGame={this.props.onNewGame}
         />
         <h1>HOT or COLD</h1>

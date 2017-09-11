@@ -9,13 +9,6 @@ export default class TopNav extends React.Component {
     }
   }
 
-  onInfo(event) {
-    event.preventDefault();
-    if (this.props.onInfo) {
-      this.props.onInfo();
-    }
-  }
-
   render() {
     return (
       <nav>
@@ -24,8 +17,7 @@ export default class TopNav extends React.Component {
             <a
               className="what"
               aria-label="How to play"
-              href="#modal"
-              onClick={e => this.onInfo(e)}
+              href="#what"
             >
               What?
             </a>

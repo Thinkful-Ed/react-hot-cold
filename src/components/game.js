@@ -6,31 +6,14 @@ import StatusSection from "./status-section";
 import InfoSection from "./info-section"
 
 export default class Game extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            guesses: [],
-            feedback: 'Make your guess!',
-            correctAnswer: Math.floor(Math.random() * 100) + 1,
-        };
-    }
-
-    newGame() {
-        this.setState({
-            guesses: [],
-            feedback: 'Make your guess!',
-            correctAnswer: Math.floor(Math.random() * 100) + 1,
-        });
-    }
-
-    guess(guess) {
-        guess = parseInt(guess, 10);
-        if (isNaN(guess)) {
-            this.setState({
-                feedback: 'Please enter a valid number'
-            });
-            return;
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      guesses: [],
+      feedback: "Make your guess!",
+      correctAnswer: Math.round(Math.random() * 100)
+    };
+  }
 
   newGame() {
     this.setState({
@@ -72,18 +55,11 @@ export default class Game extends React.Component {
     document.title = feedback ? `${feedback} | Hot or Cold` : "Hot or Cold";
   }
 
-  toggleInfoModal = () => {
-    this.setState({
-      modalIsOpen: !this.state.modalIsOpen
-    });
-  };
-
   render() {
     return (
       <div>
         <Header
           onNewGame={() => this.newGame()}
-          toggleInfoModal={this.toggleInfoModal}
         />
         <GuessSection
           feedback={this.state.feedback}
