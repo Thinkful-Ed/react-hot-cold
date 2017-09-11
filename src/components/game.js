@@ -20,7 +20,7 @@ export default class Game extends React.Component {
 
 
 
-  newGame() {
+  restartGame() {
     this.setState({
       guesses: [],
       feedback: "Make your guess!",
@@ -73,7 +73,7 @@ export default class Game extends React.Component {
     return (
       <div>
         <Header
-          onNewGame={() => this.newGame()}
+          onRestartGame={() => this.restartGame()}
           onGenerateAuralUpdate={()=> this.generateAuralUpdate()}
         />
         <main role="main">

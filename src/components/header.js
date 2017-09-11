@@ -9,7 +9,7 @@ export default function Header(props) {
     <header>
       <TopNav
         onGenerateAuralUpdate={props.onGenerateAuralUpdate}
-        onNewGame={props.onNewGame}
+        onRestartGame={props.onRestartGame}
       />
       <h1>HOT or COLD</h1>
     </header>
