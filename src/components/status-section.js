@@ -3,6 +3,7 @@ import React from "react";
 import "./status-section.css";
 
 export default function guessSection(props) {
+  console.log(props.auralUpdate)
   const guesses = props.guesses.map((guess, index) =>
     <li aria-label={`${guess}`} key={index}>
       <span className="visually-hidden">
@@ -27,12 +28,11 @@ export default function guessSection(props) {
       </ul>
       <div 
       id="status-readout"
-      className=""
+      className="visually-hidden"
       aria-live="assertive"
       aria-atomic="true"
-      hidden={!props.readStatus}>
-        <p>Here's the status of the game right now: {props.feedback} You've made {guessCount} guesses. In order of most- to least-recent, they are: {props.guesses.join(', ')}
-        </p>
+      >
+        <p> {props.auralUpdate}</p>
       </div>
     </section>
   );

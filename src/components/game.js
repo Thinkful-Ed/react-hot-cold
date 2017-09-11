@@ -12,6 +12,7 @@ export default class Game extends React.Component {
       guesses: [],
       feedback: "Make your guess!",
       correctAnswer: Math.round(Math.random() * 100),
+      auralUpdate: '',
       readStatus: false,
       gameWon: false
     };
@@ -61,16 +62,11 @@ export default class Game extends React.Component {
     document.title = feedback ? `${feedback} | Hot or Cold` : "Hot or Cold";
   }
 
-  readStatus() {
-    this.setState((prevState, props) => {
-      return {
-        readStatus: true
-      }
-    }), this.setState((prevState, props) => {
-      return {
-        readStatus: false
-      }
-    }) 
+  generateAuralUpdate() {
+    this.setState({
+      auralUpdate: `Here's the status of the game right now: ${this.state.feedback} You've made ${this.state.guesses.length} guesses. In order of most- to least-recent, they are: ${this.state.guesses.join(', ')}`,
+      readStatus: true
+    })
   }
 
   render() {
@@ -78,7 +74,7 @@ export default class Game extends React.Component {
       <div>
         <Header
           onNewGame={() => this.newGame()}
-          onReadStatus={()=> this.readStatus()}
+          onGenerateAuralUpdate={()=> this.generateAuralUpdate()}
         />
         <main role="main">
           <GuessSection
@@ -90,7 +86,7 @@ export default class Game extends React.Component {
           <StatusSection
             feedback={this.state.feedback}
             guesses={this.state.guesses}
-            readStatus={this.state.readStatus}
+            auralUpdate={this.state.auralUpdate}
           />
           <InfoSection />
         </main>
