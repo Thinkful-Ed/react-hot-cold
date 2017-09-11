@@ -12,14 +12,15 @@ export default function guessSection(props) {
       {guess}
     </li>
   );
+ 
   return (
     <section role="region"
-      aria-label="Game status"
-      aria-describedby="guessCount"
+      aria-labelledby="guessCount"
+      aria-describedby="guessList"
     >
-      <p id="guessCount">
-        You've made <span id="count">{props.count}</span> guesses!
-      </p>
+    <h2 id="guessCount">
+      You've made <span id="count">{props.count}</span> guesses!
+    </h2>
       <ul id="guessList" className="guessBox clearfix">
         {guesses}
       </ul>
