@@ -1,19 +1,11 @@
 import React from "react";
 
+import GuessList from "./guess-list";
+
 import "./status-section.css";
 
 export default function guessSection(props) {
-  console.log(props.auralUpdate)
-  const guesses = props.guesses.map((guess, index) =>
-    <li aria-label={`${guess}`} key={index}>
-      <span className="visuallyhidden">
-        Guess #{index + 1} was{" "}
-      </span>   
-      {guess}
-    </li>
-  );
   const guessCount = props.guesses.length;
- 
   return (
     <section aria-labelledby="guessCount"
       aria-describedby="guessList"
@@ -21,9 +13,7 @@ export default function guessSection(props) {
     <h2 id="guessCount">
       You've made <span id="count">{guessCount}</span> guesses!
     </h2>
-      <ul id="guessList" className="guessBox clearfix">
-        {guesses}
-      </ul>
+    <GuessList guesses={props.guesses}/>
       <div 
       id="status-readout"
       className="visuallyhidden"
