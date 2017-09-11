@@ -11,6 +11,7 @@ export default function guessSection(props) {
       {guess}
     </li>
   );
+  const guessCount = props.guesses.length;
  
   return (
     <section role="region"
@@ -18,7 +19,7 @@ export default function guessSection(props) {
       aria-describedby="guessList"
     >
     <h2 id="guessCount">
-      You've made <span id="count">{props.count}</span> guesses!
+      You've made <span id="count">{guessCount}</span> guesses!
     </h2>
       <ul id="guessList" className="guessBox clearfix">
         {guesses}

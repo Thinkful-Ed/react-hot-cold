@@ -82,7 +82,6 @@ export default class Game extends React.Component {
 
           />
           <StatusSection
-            count={this.state.guesses.length}
             guesses={this.state.guesses}
             readStatus={this.state.readStatus}
           />
