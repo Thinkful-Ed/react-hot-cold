@@ -24,6 +24,12 @@ export default function guessSection(props) {
       <ul id="guessList" className="guessBox clearfix">
         {guesses}
       </ul>
+      <div 
+      id="status-readout"
+      className=""
+      hidden>
+        Test
+      </div>
     </section>
   );
 }
