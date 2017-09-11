@@ -2,8 +2,8 @@ import React from "react"
 
 export default function InfoSection(props) {
   return (
-    <section>
-      <h2 id="what">What do I do?</h2>
+    <section id="what" tabIndex="-1">
+      <h2>What do I do?</h2>
         <p>This is a Hot or Cold Number Guessing Game. The game goes like this:</p>
         <ol>
           <li>I pick a <strong>random secret number</strong> between 1 to 100 and keep it hidden.</li>
