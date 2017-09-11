@@ -30,6 +30,20 @@
 }
 body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .visually-hidden button { display: none !important; }
 
+/* Create a highlight keyframe */
+@keyframes highlight {
+  0% {
+      background: skyblue
+  }
+  100% {
+      background: none;
+  }
+}
+
+:target {
+  animation: highlight 2s;
+}
+
 html {
   width: 100%;
   height: 100%;
