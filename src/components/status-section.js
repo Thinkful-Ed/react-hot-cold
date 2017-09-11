@@ -2,6 +2,7 @@ import React from "react";
 
 import GuessList from "./guess-list";
 import GuessCount from "./guess-count";
+import AuralStatus from "./aural-status";
 
 import "./status-section.css";
 
@@ -13,14 +14,7 @@ export default function guessSection(props) {
     >
     <GuessCount guessCount={props.guesses.length}/>
     <GuessList guesses={props.guesses}/>
-      <div 
-      id="status-readout"
-      className="visuallyhidden"
-      aria-live="assertive"
-      aria-atomic="true"
-      >
-        <p> {props.auralUpdate}</p>
-      </div>
+    <AuralStatus statusText={props.statusText}/>
     </section>
   );
 }
