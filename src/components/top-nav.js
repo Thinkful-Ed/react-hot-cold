@@ -32,6 +32,14 @@ export default class TopNav extends React.Component {
               + New Game
             </a>
           </li>
+          <li>
+            <a
+            href="#get-status"
+            onClick={this.onReadStatus}
+            >
+              Hear state of game
+            </a>
+          </li>
         </ul>
       </nav>
     );
