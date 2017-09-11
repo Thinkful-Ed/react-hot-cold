@@ -5,7 +5,7 @@ import "./guess-list.css";
 export default function GuessList(props) {
   const guesses = props.guesses.map((guess, index) => (
     <li aria-label={`${guess}`} key={index}>
-      <span className="visually-hidden">Guess #{index + 1} was </span>
+      <span className="visuallyhidden">Guess #{index + 1} was </span>
       {guess}
     </li>
   ));

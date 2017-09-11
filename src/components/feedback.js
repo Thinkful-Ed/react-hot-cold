@@ -6,7 +6,7 @@ export default function Feedback(props) {
         role="status"
         aria-live="assertive"
         aria-atomic="true">
-          {props.feedback} {!props.gameWon ? <span className="visually-hidden">Guess again!</span>: ''}
+          {props.feedback} {!props.gameWon ? <span className="visuallyhidden">Guess again!</span>: ''}
         </h2>
     )
 }

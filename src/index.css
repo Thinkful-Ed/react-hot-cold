@@ -57,22 +57,31 @@ a {
    A11y Styles
 ---------------------------------------------------------------------------------*/
 
-/* Hide content from sighted users only 
-https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html */
-.visually-hidden { 
-  position: absolute !important;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  padding:0 !important;
-  border:0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  overflow: hidden;
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { 
+    border: 0; 
+    clip: rect(0 0 0 0); 
+    height: 1px; 
+    margin: -1px; 
+    overflow: hidden; 
+    padding: 0; 
+    position: absolute; 
+    width: 1px; 
 }
-body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .visually-hidden button { display: none !important; }
 
-/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+/* Extends the .visuallyhidden class to allow the element 
+to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, 
+.visuallyhidden.focusable:focus,
+ { 
+    clip: auto !important; 
+    height: auto !important; 
+    margin: 0 !important;     
+    padding: 5px !important;
+    overflow: visible !important; 
+    position: static !important; 
+    width: auto !important; 
+}
 
 /* Create a highlight keyframe */
 @keyframes highlight {

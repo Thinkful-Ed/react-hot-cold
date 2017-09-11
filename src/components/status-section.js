@@ -6,7 +6,7 @@ export default function guessSection(props) {
   console.log(props.auralUpdate)
   const guesses = props.guesses.map((guess, index) =>
     <li aria-label={`${guess}`} key={index}>
-      <span className="visually-hidden">
+      <span className="visuallyhidden">
         Guess #{index + 1} was{" "}
       </span>   
       {guess}
@@ -26,7 +26,7 @@ export default function guessSection(props) {
       </ul>
       <div 
       id="status-readout"
-      className="visually-hidden"
+      className="visuallyhidden"
       aria-live="assertive"
       aria-atomic="true"
       >
