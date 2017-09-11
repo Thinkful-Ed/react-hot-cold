@@ -14,7 +14,6 @@ export default function guessSection(props) {
   );
   const guessCount = props.guesses.length;
  
-  console.log(props.guesses.join(', '))
   return (
     <section role="region"
       aria-labelledby="guessCount"
