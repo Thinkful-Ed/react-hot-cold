@@ -20,8 +20,7 @@ export default class GuessForm extends React.Component {
         id="userGuess" className="text"
         min="1" max="100" maxLength="3"
         autoComplete="off"
-        aria-label="Enter a number"
-        aria-describedby="feedback"
+        aria-labelledby="feedback"
         ref={input => (this.input = input)}
         required
       />
