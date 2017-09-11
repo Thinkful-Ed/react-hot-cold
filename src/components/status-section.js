@@ -26,7 +26,7 @@ export default function guessSection(props) {
       <div 
       id="status-readout"
       className=""
-      hidden={props.readStatus}>
+      hidden={!props.readStatus}>
         Test
       </div>
     </section>
