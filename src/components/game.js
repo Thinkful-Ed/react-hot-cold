@@ -80,7 +80,7 @@ export default class Game extends React.Component {
           <GuessSection
             feedback={this.state.feedback}
             gameWon={this.state.gameWon}
-            makeGuess={guess => this.makeGuess(guess)}
+            onMakeGuess={guess => this.makeGuess(guess)}
 
           />
           <StatusSection
