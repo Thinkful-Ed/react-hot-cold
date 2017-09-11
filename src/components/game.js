@@ -11,7 +11,8 @@ export default class Game extends React.Component {
     this.state = {
       guesses: [],
       feedback: "Make your guess!",
-      correctAnswer: Math.round(Math.random() * 100)
+      correctAnswer: Math.round(Math.random() * 100),
+      gameWon: true
     };
   }
 
@@ -34,7 +35,7 @@ export default class Game extends React.Component {
 
     const difference = Math.abs(guess - this.state.correctAnswer);
 
-    let feedback;
+    let feedback, gameWon
     if (difference >= 50) {
       feedback = "You're Ice Cold...";
     } else if (difference >= 30) {
@@ -44,12 +45,14 @@ export default class Game extends React.Component {
     } else if (difference >= 1) {
       feedback = "You're Hot!";
     } else {
+      gameWon = true;
       feedback = "You got it!";
     }
 
     this.setState({
       feedback,
-      guesses: [...this.state.guesses, guess]
+      gameWon,
+      guesses: [...this.state.guesses, guess],
     });
 
     document.title = feedback ? `${feedback} | Hot or Cold` : "Hot or Cold";
@@ -63,7 +66,9 @@ export default class Game extends React.Component {
         />
         <GuessSection
           feedback={this.state.feedback}
+          gameWon={this.state.gameWon}
           makeGuess={guess => this.makeGuess(guess)}
+
         />
         <StatusSection
           count={this.state.guesses.length}
