@@ -1,7 +1,6 @@
 import React from "react";
 
-import "./guess-count.css";
-import "./guess-list.css";
+import "./status-section.css";
 
 export default function guessSection(props) {
   const guesses = props.guesses.map((guess, index) =>
