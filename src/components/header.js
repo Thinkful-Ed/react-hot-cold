@@ -8,7 +8,7 @@ export default function Header(props) {
   return (
     <header>
       <TopNav
-        onReadStatus={props.onReadStatus}
+        onGenerateAuralUpdate={props.onGenerateAuralUpdate}
         onNewGame={props.onNewGame}
       />
       <h1>HOT or COLD</h1>

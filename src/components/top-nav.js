@@ -28,7 +28,7 @@ export default function TopNav(props) {
           <li>
             <a
             href="#get-status"
-            onClick={props.onReadStatus}
+            onClick={props.onGenerateAuralUpdate}
             >
               Hear state of game
             </a>
