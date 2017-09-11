@@ -11,9 +11,8 @@ export default class Game extends React.Component {
     this.state = {
       guesses: [],
       feedback: "Make your guess!",
-      correctAnswer: Math.round(Math.random() * 100),
       auralStatus: '',
-      readStatus: false,
+      correctAnswer: Math.round(Math.random() * 100),
       gameWon: false
     };
   }
@@ -65,8 +64,7 @@ export default class Game extends React.Component {
   generateAuralUpdate() {
     const { guesses, feedback } = this.state;
     this.setState({
-      auralStatus: `Here's the status of the game right now: ${feedback} You've made ${guesses.length} ${guesses.length > 1 ? 'guesses' : 'guess'}. In order of most- to least-recent, they are: ${guesses.join(', ')}`,
-      readStatus: true
+      auralStatus: `Here's the status of the game right now: ${feedback} You've made ${guesses.length} ${guesses.length > 1 ? 'guesses' : 'guess'}. In order of most- to least-recent, they are: ${guesses.join(', ')}`
     })
   }
 
