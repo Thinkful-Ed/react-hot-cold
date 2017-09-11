@@ -1,4 +1,6 @@
 import React from "react";
+
+import Feedback from "./feedback";
 import GuessForm from "./guess-form";
 
 import "./guess-section.css";
@@ -11,13 +13,7 @@ export default class GuessSection extends React.Component {
         aria-label="Guess section"
         aria-describedby="feedback"
       >
-        <h2 id="feedback"
-        role="status"
-        aria-live="assertive"
-        aria-atomic="true"
-        ref={feedback => (this.feedback = feedback)}>
-          {this.props.feedback} {!this.props.gameWon ? <span className="visually-hidden">Guess again!</span>: ''}
-        </h2>
+        <Feedback feedback={this.props.feedback}/>
         <GuessForm makeGuess={guess => this.props.makeGuess(guess)}/>
       </section>
     );
