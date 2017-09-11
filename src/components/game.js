@@ -23,16 +23,16 @@ export default class Game extends React.Component {
     this.setState({
       guesses: [],
       feedback: "Make your guess!",
-      correctAnswer: Math.floor(Math.random() * 100) + 1
+      auralStatus: '',
+      correctAnswer: Math.floor(Math.random() * 100) + 1,
+      gameWon: false
     });
   }
 
   makeGuess(guess) {
     guess = parseInt(guess, 10);
     if (isNaN(guess)) {
-      this.setState({
-        feedback: "Please enter a valid number"
-      });
+      this.setState({ feedback: "Please enter a valid number" });
       return;
     }
 
