@@ -1,3 +1,7 @@
+#what {
+    padding: 2rem;
+}
+
 /* Create a highlight keyframe */
 @keyframes highlight {
     0% {
