@@ -24,10 +24,10 @@ export default class GuessForm extends Component {
         ref={input => (this.input = input)}
         required
       />
-      <input type="submit" name="submit" 
-        id="guessButton" className="button"
-        value="Guess"
-      />
+      <button type="submit" name="submit" 
+        id="guessButton" className="button">
+        Guess
+      </button>
     </form>
     );
   }
