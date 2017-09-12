@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 
 import "./guess-form.css";
 
-export default class GuessForm extends React.Component {
+export default class GuessForm extends Component {
   onSubmit(event) {
     event.preventDefault();
 
