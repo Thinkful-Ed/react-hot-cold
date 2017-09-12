@@ -1,4 +1,6 @@
-import React from "react"
+import React from "react";
+
+import "./info-section.css";
 
 export default function InfoSection(props) {
   return (
