@@ -1,6 +1,7 @@
-input {
-  width: 300px;
-  height: 50px;
+input, button {
+  width: 18.75rem;
+  height: 3.125rem;
+  line-height: 100%;
   display: block;
   padding: 0.8em 0;
   margin: 0.8rem auto 0;
@@ -12,11 +13,11 @@ input {
   border-radius: 4px;
 }
 
-input.button {
-  background: #1f253d;
+button.button {
   color: #95a5a6;
   font-size: 2em;
-  padding: 0.2em;
+  padding: 0;
+  border: 3px solid grey;
   -webkit-transition: background 1s ease-in-out;
   -moz-transition: background 1s ease-in-out;
   -ms-transition: background 1s ease-in-out;
@@ -24,8 +25,8 @@ input.button {
   transition: background 1s ease-in-out;
 }
 
-input.button:hover,
-input.button:focus {
+button.button:hover,
+button.button:focus {
   background: #e64c65;
   color: #fff;
   cursor: pointer;
@@ -35,26 +36,4 @@ input.text {
   text-align: center;
   padding: 0.2em;
   font-size: 2em;
-}
-
-p {
-  color: white;
-}
-
-::-webkit-input-placeholder {
-  color: #95a5a6;
-}
-
-:-moz-placeholder {
-  /* Firefox 18- */
-  color: #95a5a6;
-}
-
-::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #95a5a6;
-}
-
-:-ms-input-placeholder {
-  color: #95a5a6;
 }
