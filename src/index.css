@@ -82,19 +82,3 @@ to be focusable when navigated to via the keyboard: h5bp.com/p */
     position: static !important; 
     width: auto !important; 
 }
-
-/* Create a highlight keyframe */
-@keyframes highlight {
-  0% {
-      background: skyblue
-  }
-  100% {
-      background: none;
-  }
-}
-
-/* When we link from one part of this page to another
-   we get a nice brief highlight */
-:target {
-  animation: highlight 2s;
-}
