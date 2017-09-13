@@ -2,6 +2,10 @@
     padding: 2rem;
 }
 
+#what:focus {
+    outline: 0;
+}
+
 /* Create a highlight keyframe */
 @keyframes highlight {
     0% {
