@@ -22,17 +22,18 @@ html {
   width: 100%;
   height: 100%;
   font: 110%/1 'Lato', Calibri, Arial, sans-serif;
-  padding: .25rem .125rem;
   background-color: #394264;
 }
 
 body {
+  width: 40rem;
+  height: auto;
   padding: 0;
-  padding-bottom: 5rem;
+  margin: 3rem auto;
+  text-align: center;
   line-height: 1.25;
   color: white;
   background-color: #1F253D;
-  text-align: center;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -52,6 +53,11 @@ ul li {
 
 a {
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-skip: ink;
 }
 
 
@@ -85,12 +91,20 @@ to be focusable when navigated to via the keyboard: h5bp.com/p */
   width: auto !important; 
 }
 
+/*---------------------------------------------------------------------------------
+  Animations for typography & form elements
+---------------------------------------------------------------------------------*/
+
 h1, h2, p, a, input, button, ol, ul {
   transition: all .2s linear; 
   -o-transition: all .2s linear; 
   -moz-transition: all .2s linear; 
   -webkit-transition: all .2s linear;
 }
+
+/*---------------------------------------------------------------------------------
+  Media queries
+---------------------------------------------------------------------------------*/
 
 @media screen and (min-width: 40rem) {
   html {
