@@ -7,13 +7,20 @@ export default function Feedback(props) {
    * This is necessary for consistent aural feedback via aria-live.
   */
   const key = Math.random();
+
+  let guessAgain;
+  if (!props.gameWon) {
+    guessAgain = <span className="visuallyhidden">Guess again!</span>;
+  }
   return (
-    <h2 id="feedback"
-    role="status"
-    aria-live="assertive"
-    aria-atomic="true"
-    key={key}>
-        {props.feedback} {!props.gameWon ? <span className="visuallyhidden">Guess again!</span>: ''}
+    <h2
+      id="feedback"
+      role="status"
+      aria-live="assertive"
+      aria-atomic="true"
+      key={key}
+    >
+      {props.feedback} {guessAgain}
     </h2>
-  )
+  );
 }
