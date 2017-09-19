@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './feedback.css'
+
 export default function Feedback(props) {
   /** 
    * Generate a random key so that React treats the feedback message 

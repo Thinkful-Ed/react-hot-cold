@@ -3,8 +3,6 @@ import React from 'react';
 import Feedback from './feedback';
 import GuessForm from './guess-form';
 
-import './guess-section.css';
-
 export default function GuessSection(props) {
   const { gameWon, feedback } = props;
   return (
