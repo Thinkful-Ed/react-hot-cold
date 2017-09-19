@@ -16,7 +16,7 @@ export default function TopNav(props) {
             href="#feedback"
             className="new"
             aria-label="Start a new game"
-            onClick={props.onRestartGame}
+            onClick={() => props.onRestartGame()}
           >
             + New Game
           </a>
@@ -25,7 +25,7 @@ export default function TopNav(props) {
           <a
             href="#get-status"
             className="visuallyhidden focusable"
-            onClick={props.onGenerateAuralUpdate}
+            onClick={() => props.onGenerateAuralUpdate()}
           >
             Hear state of game
           </a>
