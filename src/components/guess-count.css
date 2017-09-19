@@ -1,4 +1,10 @@
+#guessCount {
+  margin: .8rem auto;
+}
+
 #count {
+  display: inline-block;
+  vertical-align: middle;
   color: #f39c12;
   font-weight: 700;
   font-size: 1.5em;
