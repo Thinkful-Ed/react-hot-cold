@@ -1,11 +1,3 @@
-#what {
-  padding: 2rem;
-}
-
-#what:focus {
-  outline: 0;
-}
-
 /* Create a highlight keyframe */
 @keyframes section-highlight {
   0% {
@@ -14,6 +6,14 @@
   100% {
     background: none;
   }
+}
+
+#what {
+  padding: 2rem;
+}
+
+#what:focus {
+  outline: 0;
 }
 
 #what:target {
