@@ -59,17 +59,15 @@ export default class Game extends React.Component {
     const { guesses, feedback } = this.state;
     const pluralize = guesses.length > 1;
 
-    const auralStatus = `Here's the status of the game right now: ${feedback} You've made ${guesses.length} ${pluralize
-      ? 'guesses'
-      : 'guess'}. ${pluralize
-      ? 'In order of most- to least-recent, they are'
-      : 'it was'}: ${guesses.join(', ')}`;
+    const auralStatus = `Here's the status of the game right now: ${feedback} You've made ${guesses.length} ${pluralize ? 'guesses' : 'guess'}. 
+    ${pluralize ? 'In order of most- to least-recent, they are' : 'it was'}: 
+    ${guesses.join(', ')}`;
 
     this.setState({ auralStatus });
   }
 
   render() {
-    const {feedback, guesses, auralStatus, correctAnswer} = this.state;
+    const { feedback, guesses, auralStatus, correctAnswer } = this.state;
     const gameWon = guesses[guesses.length - 1] === correctAnswer;
 
     return (
@@ -84,10 +82,7 @@ export default class Game extends React.Component {
             gameWon={gameWon}
             onMakeGuess={guess => this.makeGuess(guess)}
           />
-          <StatusSection
-            guesses={guesses}
-            statusText={auralStatus}
-          />
+          <StatusSection guesses={guesses} statusText={auralStatus} />
           <InfoSection />
         </main>
       </div>
