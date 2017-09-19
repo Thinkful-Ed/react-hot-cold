@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Header from './header';
 import GuessSection from './guess-section';
 import StatusSection from './status-section';
 import InfoSection from './info-section';
 
-export default class Game extends Component {
+export default class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
