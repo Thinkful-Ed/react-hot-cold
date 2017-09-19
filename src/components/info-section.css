@@ -7,17 +7,15 @@
 }
 
 /* Create a highlight keyframe */
-@keyframes highlight {
+@keyframes section-highlight {
   0% {
-    background: skyblue;
+    background: #9b1228;
   }
   100% {
     background: none;
   }
 }
 
-/* When we link from one part of this page to another
-     we get a nice brief highlight */
-:target {
-  animation: highlight 2s;
+#what:target {
+  animation: section-highlight 3s;
 }

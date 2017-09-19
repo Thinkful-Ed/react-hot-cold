@@ -7,9 +7,18 @@
   display: block;
   line-height: 1em;
   color: #fff;
-  transition: background 240ms ease;
+}
+
+/* Create a highlight keyframe */
+@keyframes feedback-highlight {
+  0% {
+    background: #9b1228;
+  }
+  100% {
+    background: #cc324b;
+  }
 }
 
 #feedback:target {
-  background: #9b1228;
+  animation: feedback-highlight 3s;
 }
