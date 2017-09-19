@@ -6,11 +6,11 @@ import GuessForm from './guess-form';
 import './guess-section.css';
 
 export default function GuessSection(props) {
-  let { onMakeGuess, ...gameState } = props;
+  const { gameWon, feedback } = props;
   return (
     <section aria-label="Guess section" aria-describedby="feedback">
-      <Feedback {...gameState} />
-      <GuessForm onMakeGuess={guess => onMakeGuess(guess)} />
+      <Feedback gameWon={gameWon} feedback={feedback} />
+      <GuessForm onMakeGuess={guess => this.onMakeGuess(guess)} />
     </section>
   );
 }
