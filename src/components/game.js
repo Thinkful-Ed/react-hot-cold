@@ -1,16 +1,16 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Header from "./header";
-import GuessSection from "./guess-section";
-import StatusSection from "./status-section";
-import InfoSection from "./info-section"
+import Header from './header';
+import GuessSection from './guess-section';
+import StatusSection from './status-section';
+import InfoSection from './info-section';
 
 export default class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
       guesses: [],
-      feedback: "Make your guess!",
+      feedback: 'Make your guess!',
       auralStatus: '',
       correctAnswer: Math.round(Math.random() * 100) + 1,
       gameWon: false
@@ -20,7 +20,7 @@ export default class Game extends Component {
   restartGame() {
     this.setState({
       guesses: [],
-      feedback: "Make your guess!",
+      feedback: 'Make your guess!',
       auralStatus: '',
       correctAnswer: Math.floor(Math.random() * 100) + 1,
       gameWon: false
@@ -30,13 +30,13 @@ export default class Game extends Component {
   makeGuess(guess) {
     guess = parseInt(guess, 10);
     if (isNaN(guess)) {
-      this.setState({ feedback: "Please enter a valid number" });
+      this.setState({ feedback: 'Please enter a valid number' });
       return;
     }
 
     const difference = Math.abs(guess - this.state.correctAnswer);
 
-    let feedback, gameWon
+    let feedback, gameWon;
     if (difference >= 50) {
       feedback = "You're Ice Cold...";
     } else if (difference >= 30) {
@@ -47,24 +47,28 @@ export default class Game extends Component {
       feedback = "You're Hot!";
     } else {
       gameWon = true;
-      feedback = "You got it!";
+      feedback = 'You got it!';
     }
 
     this.setState({
       feedback,
       gameWon,
-      guesses: [...this.state.guesses, guess],
+      guesses: [...this.state.guesses, guess]
     });
 
-    document.title = feedback ? `${feedback} | Hot or Cold` : "Hot or Cold";
+    document.title = feedback ? `${feedback} | Hot or Cold` : 'Hot or Cold';
   }
 
   generateAuralUpdate() {
     const { guesses, feedback } = this.state;
     const pluralize = guesses.length > 1;
 
-    const auralStatus = `Here's the status of the game right now: ${feedback} You've made ${guesses.length} ${pluralize ? 'guesses' : 'guess'}. ${pluralize ? 'In order of most- to least-recent, they are' : 'it was'}: ${guesses.join(', ')}`
-    
+    const auralStatus = `Here's the status of the game right now: ${feedback} You've made ${guesses.length} ${pluralize
+      ? 'guesses'
+      : 'guess'}. ${pluralize
+      ? 'In order of most- to least-recent, they are'
+      : 'it was'}: ${guesses.join(', ')}`;
+
     this.setState({ auralStatus });
   }
 
@@ -73,14 +77,13 @@ export default class Game extends Component {
       <div>
         <Header
           onRestartGame={() => this.restartGame()}
-          onGenerateAuralUpdate={()=> this.generateAuralUpdate()}
+          onGenerateAuralUpdate={() => this.generateAuralUpdate()}
         />
         <main role="main">
           <GuessSection
             feedback={this.state.feedback}
             gameWon={this.state.gameWon}
             onMakeGuess={guess => this.makeGuess(guess)}
-
           />
           <StatusSection
             guesses={this.state.guesses}

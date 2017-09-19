@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import "./guess-form.css";
+import './guess-form.css';
 
 export default class GuessForm extends Component {
   onSubmit(event) {
@@ -10,7 +10,7 @@ export default class GuessForm extends Component {
       const value = this.input.value;
       this.props.onMakeGuess(value);
     }
-    this.input.value = "";
+    this.input.value = '';
   }
 
   render() {
