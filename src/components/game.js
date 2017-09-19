@@ -12,8 +12,7 @@ export default class Game extends React.Component {
       guesses: [],
       feedback: 'Make your guess!',
       auralStatus: '',
-      correctAnswer: Math.round(Math.random() * 100) + 1,
-      gameWon: false
+      correctAnswer: Math.round(Math.random() * 100) + 1
     };
   }
 
@@ -22,8 +21,7 @@ export default class Game extends React.Component {
       guesses: [],
       feedback: 'Make your guess!',
       auralStatus: '',
-      correctAnswer: Math.floor(Math.random() * 100) + 1,
-      gameWon: false
+      correctAnswer: Math.floor(Math.random() * 100) + 1
     });
   }
 
@@ -36,7 +34,7 @@ export default class Game extends React.Component {
 
     const difference = Math.abs(guess - this.state.correctAnswer);
 
-    let feedback, gameWon;
+    let feedback;
     if (difference >= 50) {
       feedback = "You're Ice Cold...";
     } else if (difference >= 30) {
@@ -46,13 +44,11 @@ export default class Game extends React.Component {
     } else if (difference >= 1) {
       feedback = "You're Hot!";
     } else {
-      gameWon = true;
       feedback = 'You got it!';
     }
 
     this.setState({
       feedback,
-      gameWon,
       guesses: [...this.state.guesses, guess]
     });
 
@@ -73,6 +69,9 @@ export default class Game extends React.Component {
   }
 
   render() {
+    const {feedback, guesses, auralStatus, correctAnswer} = this.state;
+    const gameWon = guesses[guesses.length - 1] === correctAnswer;
+
     return (
       <div>
         <Header
@@ -81,13 +80,13 @@ export default class Game extends React.Component {
         />
         <main role="main">
           <GuessSection
-            feedback={this.state.feedback}
-            gameWon={this.state.gameWon}
+            feedback={feedback}
+            gameWon={gameWon}
             onMakeGuess={guess => this.makeGuess(guess)}
           />
           <StatusSection
-            guesses={this.state.guesses}
-            statusText={this.state.auralStatus}
+            guesses={guesses}
+            statusText={auralStatus}
           />
           <InfoSection />
         </main>
