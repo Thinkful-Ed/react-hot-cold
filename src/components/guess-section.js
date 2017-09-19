@@ -10,7 +10,7 @@ export default function GuessSection(props) {
   return (
     <section aria-label="Guess section" aria-describedby="feedback">
       <Feedback gameWon={gameWon} feedback={feedback} />
-      <GuessForm onMakeGuess={guess => this.onMakeGuess(guess)} />
+      <GuessForm onMakeGuess={guess => props.onMakeGuess(guess)} />
     </section>
   );
 }
