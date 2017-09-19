@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import TopNav from "./top-nav";
+import TopNav from './top-nav';
 
-import "./header.css";
+import './header.css';
 
 export default function Header(props) {
   return (
