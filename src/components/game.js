@@ -59,9 +59,13 @@ export default class Game extends React.Component {
     const { guesses, feedback } = this.state;
     const pluralize = guesses.length !== 1;
 
-    const auralStatus = `Here's the status of the game right now: ${feedback} You've made ${guesses.length} ${pluralize ? 'guesses' : 'guess'}. 
-    ${pluralize ? 'In order of most- to least-recent, they are' : 'it was'}: 
-    ${guesses.join(', ')}`;
+    let  auralStatus = `Here's the status of the game right now: ${feedback} You've made ${guesses.length} ${pluralize ? 'guesses' : 'guess'}.`;
+
+    if (guesses.length > 0) {
+      auralStatus += ` ${pluralize ? 'In order of most- to least-recent, they are' : 'It was'}: 
+      ${guesses.join(', ')}`
+    }
+
 
     this.setState({ auralStatus });
   }
