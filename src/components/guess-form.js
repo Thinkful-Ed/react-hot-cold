@@ -11,6 +11,7 @@ export default class GuessForm extends React.Component {
       this.props.onMakeGuess(value);
     }
     this.input.value = '';
+    this.input.focus();
   }
 
   render() {
