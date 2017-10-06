@@ -67,8 +67,8 @@ export default class Game extends React.Component {
   }
 
   render() {
-    const { feedback, guesses, auralStatus, correctAnswer } = this.state;
-    const gameWon = guesses[guesses.length - 1] === correctAnswer;
+    const { feedback, guesses, auralStatus } = this.state;
+    const guessCount = guesses.length;
 
     return (
       <div>
@@ -79,7 +79,7 @@ export default class Game extends React.Component {
         <main role="main">
           <GuessSection
             feedback={feedback}
-            gameWon={gameWon}
+            guessCount={guessCount}
             onMakeGuess={guess => this.makeGuess(guess)}
           />
           <StatusSection guesses={guesses} auralStatus={auralStatus} />
