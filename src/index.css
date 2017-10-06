@@ -83,9 +83,9 @@ to be focusable when navigated to via the keyboard: h5bp.com/p */
 .visuallyhidden.focusable:focus {
     clip: auto !important;
     height: auto !important;
-    margin: 0 !important;
-    overflow: visible !important;
-    position: static !important;
+    margin: 0;
+    overflow: visible;
+    position: static;
     width: auto !important;
 }
 

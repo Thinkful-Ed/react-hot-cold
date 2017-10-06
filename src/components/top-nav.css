@@ -21,3 +21,8 @@ nav ul li {
 nav a {
   color: #fff;
 }
+
+.status-link {
+  z-index: 100;
+  top: 60px;
+}
