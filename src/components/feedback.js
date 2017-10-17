@@ -15,7 +15,8 @@ export default function Feedback(props) {
     guessAgain = <span className="visuallyhidden">Guess again!</span>;
   }
   return (
-    <h2 key={key}
+    <h2 
+      key={key}
       id="feedback"
       role="status"
       aria-live="assertive"
