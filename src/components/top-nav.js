@@ -28,6 +28,8 @@ export default function TopNav(props) {
         <li>
           <a
             href="#get-status"
+            /* the `visuallyhidden` class hides an element 
+            while leaving it available to screen reader users  */
             className="visuallyhidden focusable status-link"
             onClick={() => props.onGenerateAuralUpdate()}
           >

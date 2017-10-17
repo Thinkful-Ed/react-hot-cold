@@ -11,10 +11,7 @@ export default function GuessList(props) {
   ));
 
   return (
-    <ul
-      id="guessList" 
-      className="guessBox clearfix"
-    >
+    <ul id="guessList" className="guessBox clearfix">
       {guessesHTML}
     </ul>
   );
