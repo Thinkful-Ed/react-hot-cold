@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "./guess-list.css";
+import './guess-list.css';
 
 export default function GuessList(props) {
   const guessesHTML = props.guesses.map((guess, index) => (
@@ -11,7 +11,10 @@ export default function GuessList(props) {
   ));
 
   return (
-    <ul id="guessList" className="guessBox clearfix">
+    <ul
+      id="guessList" 
+      className="guessBox clearfix"
+    >
       {guessesHTML}
     </ul>
   );
