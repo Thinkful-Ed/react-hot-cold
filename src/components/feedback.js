@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './feedback.css'
+import './feedback.css';
 
 export default function Feedback(props) {
   /** 
