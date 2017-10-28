@@ -36,13 +36,13 @@ export default class Game extends React.Component {
 
     let feedback;
     if (difference >= 50) {
-      feedback = "You're Ice Cold...";
+      feedback = 'You\'re Ice Cold...';
     } else if (difference >= 30) {
-      feedback = "You're Cold...";
+      feedback = 'You\'re Cold...';
     } else if (difference >= 10) {
-      feedback = "You're Warm.";
+      feedback = 'You\'re Warm.';
     } else if (difference >= 1) {
-      feedback = "You're Hot!";
+      feedback = 'You\'re Hot!';
     } else {
       feedback = 'You got it!';
     }
@@ -70,7 +70,7 @@ export default class Game extends React.Component {
 
     if (guesses.length > 0) {
       auralStatus += ` ${pluralize ? 'In order of most- to least-recent, they are' : 'It was'}: 
-      ${guesses.join(', ')}`
+      ${guesses.join(', ')}`;
     }
 
 
@@ -94,8 +94,8 @@ export default class Game extends React.Component {
             onMakeGuess={guess => this.makeGuess(guess)}
           />
           <StatusSection guesses={guesses} 
-            auralStatus={auralStatus} 
-        />
+            auralStatus={auralStatus}
+          />
           <InfoSection />
         </main>
       </div>
