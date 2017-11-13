@@ -1,0 +1,24 @@
+/* Create a highlight keyframe */
+@keyframes feedback-highlight {
+  0% {
+    background: #9b1228;
+  }
+  100% {
+    background: #cc324b;
+  }
+}
+
+#feedback {
+	margin: 0 auto;
+  background: #cc324b;
+  padding: 1em 0.4em;
+  font-size: 1.5em;
+  font-weight: 400;
+  display: block;
+  line-height: 1em;
+  color: #fff;
+}
+
+#feedback:target {
+  animation: feedback-highlight 3s;
+}
