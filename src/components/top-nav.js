@@ -2,38 +2,41 @@ import React from 'react';
 
 import './top-nav.css';
 
-export default class TopNav extends React.Component {
-    onNewGame(event) {
-        event.preventDefault();
-        if (this.props.onNewGame) {
-            this.props.onNewGame();
-        }
-    }
-
-    onInfo(event) {
-        event.preventDefault();
-        if (this.props.onInfo) {
-            this.props.onInfo();
-        }
-    }
-
-    render() {
-        return (
-            <nav>
-                <ul className="clearfix">
-                    <li>
-                        <a className="what" href="#" onClick={e => this.onInfo(e)}>
-                            What?
-                        </a>
-                    </li>
-                    <li>
-                        <a className="new" href="#" onClick={e => this.onNewGame(e)}>
-                            + New Game
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        );
-    }
-};
-
+export default function TopNav(props) {
+  return (
+    <nav>
+      <ul className="clearfix">
+        <li>
+          <a 
+            href="#what" 
+            className="what"
+            aria-label="How to play"
+          >
+            What?
+          </a>
+        </li>
+        <li>
+          <a
+            href="#feedback"
+            className="new"
+            aria-label="Start a new game"
+            onClick={() => props.onRestartGame()}
+          >
+            + New Game
+          </a>
+        </li>
+        <li>
+          <a
+            href="#get-status"
+            /* the `visuallyhidden` class hides an element 
+            while leaving it available to screen reader users  */
+            className="visuallyhidden focusable status-link"
+            onClick={() => props.onGenerateAuralUpdate()}
+          >
+            Hear state of game
+          </a>
+        </li>
+      </ul>
+    </nav>
+  );
+}
