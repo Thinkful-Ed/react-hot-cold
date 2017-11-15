@@ -8,6 +8,10 @@
   }
 }
 
+ol {
+  margin-bottom: 1rem;
+}
+
 #what {
   padding: 2rem;
 }
