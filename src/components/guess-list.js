@@ -3,7 +3,7 @@ import React from 'react';
 import './guess-list.css';
 
 export default function GuessList(props) {
-  const guessesHTML = props.guesses.map((guess, index) => (
+  const guesses = props.guesses.map((guess, index) => (
     <li key={index}>
       {guess}
     </li>
@@ -11,7 +11,7 @@ export default function GuessList(props) {
 
   return (
     <ul id="guessList" className="guessBox clearfix">
-      {guessesHTML}
+      {guesses}
     </ul>
   );
 }
