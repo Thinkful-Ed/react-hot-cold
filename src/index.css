@@ -4,48 +4,116 @@
 /*float styles*/
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+  content: " "; /* 1 */
+  display: table; /* 2 */
 }
 
 .clearfix:after {
-    clear: both;
+  clear: both;
 }
 
 * {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-	width: 100%;
-	height: 100%;
-	background-color: #394264;
+  width: 100%;
+  height: 100%;
+  font: 110%/1 'Lato', Calibri, Arial, sans-serif;
+  background-color: #394264;
 }
 
 body {
-	position: relative;
-	width: 98%;
-	height: 96%;
-	margin: 0.8em auto;
-	font-family: 'Lato', Calibri, Arial, sans-serif;
-	background-color: #1F253D;
-	text-align: center;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
-	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  width: 40rem;
+  height: auto;
+  padding: 0;
+  margin: 3rem auto;
+  text-align: center;
+  line-height: 1.25;
+  color: white;
+  background-color: #1F253D;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  -webkit-box-shadow: 25px 25px 25px 0px rgba(11,15,24,1);
+  -moz-box-shadow: 25px 25px 25px 0px rgba(11,15,24,1);
+  box-shadow: 25px 25px 25px 0px rgba(11,15,24,1);
+}
+
+ul, ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  display: inline;
 }
 
 a {
-	text-decoration: none;
-	color: black;
+  text-decoration: none;
 }
 
-ul li {	
-	display: inline;
+a:hover {
+  text-decoration: underline;
+  text-decoration-skip: ink;
 }
 
+
+
+/*---------------------------------------------------------------------------------
+   A11y Styles
+---------------------------------------------------------------------------------*/
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { 
+    border: 0 !important; 
+    clip: rect(0 0 0 0) !important; 
+    height: 1px !important; 
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important; 
+}
+
+/* Extends the .visuallyhidden class to allow the element 
+to be focusable when navigated to via the keyboard: h5bp.com/p */ 
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto !important;
+    height: auto !important;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto !important;
+}
+
+/*---------------------------------------------------------------------------------
+  Animations for typography & form elements
+---------------------------------------------------------------------------------*/
+
+h1, h2, p, a, input, button, ol, ul {
+  transition: all .2s linear; 
+}
+
+/*---------------------------------------------------------------------------------
+  Media queries
+---------------------------------------------------------------------------------*/
+
+@media screen and (min-width: 40rem) {
+  html {
+    font-size: 120%;
+  }
+  h1, h2, p, a, input, button, ol, ul {
+    transition: all .2s linear; 
+  }
+}
+
+@media screen and (min-width: 51rem) {
+  html {
+    font-size: 125%;
+    line-height: 1.5;
+  }
+  h1, h2, p, a, input, button, ol, ul {
+    transition: all .2s linear; 
+  }
+}
